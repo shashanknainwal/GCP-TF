@@ -27,6 +27,7 @@ def train_col():
  batch_size=128,
  num_epichs=10,
  shuffle=True)
+ model.train(pandas_input,steps=2000) 
  
  # Numpy input
   def numpy_input(sqft,prop_type,price):
