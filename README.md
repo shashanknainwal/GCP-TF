@@ -15,5 +15,25 @@ def train_col():
  features= {}
  return features
  
- model.preduct(predict_col)
+ model.predict(predict_col)
+ 
+ 
+ # Pandas input
+ 
+ def pandas_input(df):
+ return tf.estimator.inputs.pandas_input_fn(
+ x=df,
+ y=df['price'],
+ batch_size=128,
+ num_epichs=10,
+ shuffle=True)
+ 
+ # Numpy input
+  def numpy_input(sqft,prop_type,price):
+ return tf.estimator.inputs.numpy_input_fn(
+  x={"sq_foot":sqft,"type":prop_type},
+ y=price,
+ batch_size=128,
+ num_epichs=10,
+ shuffle=True)
  
