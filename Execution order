@@ -4,5 +4,7 @@
 3. Create predict function 
 4.Create feature columns for estimator
 5. Linear Regression with tf.Estimator framework
+5.a create a model on feature columns for estimator
+5.b train the model on input function
 6. Evaluate on the validation data (create RMSE function)
 
