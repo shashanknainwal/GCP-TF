@@ -1,1 +1,8 @@
 
+1. Read in the data
+2. Create input function to read in data from a DF
+3. Create predict function 
+4.Create feature columns for estimator
+5. Linear Regression with tf.Estimator framework
+6. Evaluate on the validation data (create RMSE function)
+
