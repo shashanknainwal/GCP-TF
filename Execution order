@@ -1,9 +1,29 @@
 
 1. Read in the data
 2. Create input function to read in data from a DF
+def input_fn(df):
+    return tf.estimator.inputs.pandas_input_fn(
+    x=df,
+    y=df[label],
+    batch_size=128,
+    num_epochs=10,
+    shuffle=True)
+    
 3. Create predict function 
+
 4.Create feature columns for estimator
+features_col =[tf.feature_column.numeric_column(a) for a in features]
+
 5. Linear Regression with tf.Estimator framework
+
+tf.logging.set_verbosity(tf.logging.INFO)
+
+OUTDIR = 'taxi_trained'
+shutil.rmtree(OUTDIR, ignore_errors = True) # start fresh each time
+
+model=tf.estimator.LinearRegressor(features_col,model_dir = OUTDIR)
+
+
 5.a create a model on feature columns for estimator
 5.b train the model on input function
 6. Evaluate on the validation data (create RMSE function)
