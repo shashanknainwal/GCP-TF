@@ -1,4 +1,20 @@
 # Loading large datasets progressively with the tf.data.Dataset
+
+
+
+# Create list of file names that match "glob" pattern (i.e. data_file_*.csv)
+    filenames_dataset = tf.data.Dataset.list_files(filename)
+    # Read lines from text files
+    textlines_dataset = filenames_dataset.flat_map(tf.data.TextLineDataset)
+    # Parse text lines as comma-separated values (CSV)
+    dataset = textlines_dataset.map(decode_csv)
+    
+    
+    
+    
+    
+    
+    
 CSV_COLUMNS = ['fare_amount', 'pickuplon','pickuplat','dropofflon','dropofflat','passengers', 'key']
 LABEL_COLUMN = 'fare_amount'
 DEFAULTS = [[0.0], [-74.0], [40.0], [-74.0], [40.7], [1.0], ['nokey']]
