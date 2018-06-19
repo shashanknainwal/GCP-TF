@@ -1,1 +1,20 @@
 
+##  Data coming from data warehouse
+
+{
+"transaction_id :42,
+'name':'Ice cream',
+'price': 2.5,
+'tags':['cold','hot'],
+'employee_id": 109748,
+'waitTime':14.2
+}
+
+Above data needs to be converted into below array.
+
+[,2.5,,,, 14.2]
+
+Step 1:
+# Input_columns =[...,tf.feature_column.numeric_column('price'),.....]
+
+
