@@ -29,6 +29,8 @@ hour of the day example 1,2,3,4,....23,24- integer and follow an order
 tf.feature_column.categorical_column_with_identity('hours_of_the_day',24)
 
 
+Refer:https://www.tensorflow.org/get_started/feature_columns
+
 
 Step3: feature should have same range= [-1,1] or [0,1]
 
