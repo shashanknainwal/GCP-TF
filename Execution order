@@ -11,8 +11,17 @@ def input_fn(df):
     
 3. Create predict function 
 
+
 4.Create feature columns for estimator
 features_col =[tf.feature_column.numeric_column(a) for a in features]
+def create_feature_cols():
+  return [
+    tf.feature_column.numeric_column('housing_median_age'),
+    tf.feature_column.bucketized_column(tf.feature_column.numeric_column('latitude'), boundaries = np.arange(32.0, 42, 1).tolist()),
+    tf.feature_column.numeric_column('num_rooms'),
+    tf.feature_column.numeric_column('median_income')
+  ]
+  
 
 5. Linear Regression with tf.Estimator framework
 
@@ -25,6 +34,9 @@ model=tf.estimator.LinearRegressor(features_col,model_dir = OUTDIR)
 
 
 5.a create a model on feature columns for estimator
+
+
 5.b train the model on input function
+model.train(input_fn(df_train))
 6. Evaluate on the validation data (create RMSE function)
 
