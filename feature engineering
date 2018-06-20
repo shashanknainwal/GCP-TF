@@ -1,4 +1,4 @@
-
+(
 ##  Data coming from data warehouse
 
 {
@@ -16,5 +16,24 @@ Above data needs to be converted into below array.
 
 Step 1:
 # Input_columns =[...,tf.feature_column.numeric_column('price'),.....]
+
+Step 2:
+
+One hot encoding
+
+tf.feature_column.categorical_column_with_vocabulary_list('employee iD',Vocabulary_list=['8375',109748',3434']
+
+
+hour of the day example 1,2,3,4,....23,24- integer and follow an order
+
+tf.feature_column.categorical_column_with_identity('hours_of_the_day',24)
+
+
+
+Step3: feature should have same range= [-1,1] or [0,1]
+
+feature['scaled_price']= (feature['price']-min_price)/(max_price-min_price)
+
+
 
 
