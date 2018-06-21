@@ -1,1 +1,10 @@
 
+# Data preprocessing tricks
+
+1. Remove features that you dont want to train- Beam or Big query
+
+2. Compute vocabulary for categorical variables- beam or big query
+
+3. Compute agg. statistics for numerical variables- beam or big query
+
+4. compute time windowed statistics( number of products sold in previous hour)- beam only
